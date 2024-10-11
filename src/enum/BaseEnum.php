@@ -12,4 +12,7 @@ class BaseEnum
     const API_GEOCODE_REGEO = '/v3/geocode/regeo';
     const API_GEOCODE_REGEO_METHOD = 'GET';
 
+    const API_ASSISTANT_COORDINATE_CONVERT = '/v3/assistant/coordinate/convert';
+    const API_ASSISTANT_COORDINATE_CONVERT_METHOD = 'GET';
+
 }
