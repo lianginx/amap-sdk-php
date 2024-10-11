@@ -1,7 +1,7 @@
 {
     "name": "lianginx/amap-sdk-php",
     "description": "高德地图SDK",
-    "license": "GPL",
+    "license": "GPL-3.0-only",
     "authors": [
         {
             "name": "Liang INX",
