@@ -62,7 +62,7 @@ class Trace
      *  - height (float|null)       高度，单位为米，小数点后最多3位，非必填
      *  - accuracy (float|null)     定位精度，仅允许数字，小数点后最多3位，非必填
      *  - props(json)               用户自定义字段
-     * @link https://lbs.amap.com/api/track/lieying-kaifa/api/terminal#t4
+     * @link https://lbs.amap.com/api/track/lieying-kaifa/api/track-sdk#t4
      */
     static function pointUpload(int $sid, int $tid, int $trid, array $points)
     {
