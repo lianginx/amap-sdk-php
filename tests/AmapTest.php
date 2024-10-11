@@ -347,10 +347,11 @@ class AmapTest extends TestCase
 
     function testCoordinateConvert()
     {
-        $result = Coordinate::convert('121.130196,31.284001|121.130196,31.284001|121.130196,31.284001');
+        $result = Coordinate::convert('117.133156,31.830137|117.133023,31.830212', 'gps');
+        var_dump(explode(";", $result['locations']));
         self::assertIsArray($result);
         self::assertIsString($result['locations']);
-        self::assertCount(3, explode("|", $result['locations']));
+        self::assertCount(2, explode(";", $result['locations']));
     }
 
 
