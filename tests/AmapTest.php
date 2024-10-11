@@ -7,6 +7,7 @@ use amap\track\{
     Trace,
 };
 use amap\base\{
+    Coordinate,
     Geocode,
 };
 
@@ -334,12 +335,22 @@ class AmapTest extends TestCase
         self::assertEquals('320583', $result['geocodes'][0]['adcode']);
     }
 
+
     function testGeocodeReGeo()
     {
         $result = Geocode::reGeo('121.130196,31.284001');
         self::assertIsArray($result);
         self::assertIsArray($result['regeocode']);
         self::assertEquals(1, $result['status']);
+    }
+
+
+    function testCoordinateConvert()
+    {
+        $result = Coordinate::convert('121.130196,31.284001|121.130196,31.284001|121.130196,31.284001');
+        self::assertIsArray($result);
+        self::assertIsString($result['locations']);
+        self::assertCount(3, explode("|", $result['locations']));
     }
 
 
