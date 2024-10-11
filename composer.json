@@ -2,13 +2,14 @@
     "name": "lianginx/amap-sdk-php",
     "description": "高德地图SDK",
     "license": "GPL-3.0-only",
+    "version": "0.1.0",
     "authors": [
         {
             "name": "Liang INX",
             "email": "liang@in-x.cc"
         }
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "amap\\": "src/"
