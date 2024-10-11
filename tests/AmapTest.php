@@ -284,12 +284,18 @@ class AmapTest extends TestCase
                     'location' => '117.132928,31.830188',
                     'locatetime' => 1728461228000,
                     'speed' => 0.074,
+                ],
+                [
+                    'location' => '',
+                    'locatetime' => 1,
+                    'speed' => 1,
                 ]
             ];
 
             // 批量点上传轨迹点
             $upload_result = Trace::pointUpload($service['sid'], $terminal['tid'], $trace_1['trid'], $points);
             self::assertIsArray($upload_result);
+            self::assertCount(1, $upload_result['errorpoints']);
 
             // 查询轨迹信息
             $trSearch = Terminal::trSearch($service['sid'], $terminal['tid'], $trace_1['trid']);

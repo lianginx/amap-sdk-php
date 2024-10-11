@@ -75,7 +75,8 @@ class Trace
         $req = new Request(
             TrackEnum::API_POINT_UPLOAD,
             TrackEnum::API_POINT_UPLOAD_METHOD,
-            $params
+            $params,
+            ['throw_api_error' => false]
         );
         return $req->data;
     }

@@ -15,6 +15,9 @@ class Request
 
     function __construct(string $url, string $method = 'GET', array $params = [], array $options = [])
     {
+        // 默认拦截API错误状态, 抛出异常
+        $options['throw_api_error'] = !isset($options['throw_api_error']) ?? true;
+
         $client = new Client([
             'base_uri' => TrackEnum::API_BASE_URL,
         ]);
@@ -38,8 +41,9 @@ class Request
 
         $body = $response->getBody()->getContents();
         $jsonBody = json_decode($body, true) ?? [];
-        if ($jsonBody['errcode'] != 10000)
+        if ($jsonBody['errcode'] != 10000 && $options['throw_api_error']) {
             throw new \Exception($jsonBody['errmsg']);
+        }
 
         $this->data = $jsonBody['data'] ?? [];
     }
