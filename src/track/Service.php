@@ -55,7 +55,7 @@ class Service
             TrackEnum::API_SERVICE_LIST,
             TrackEnum::API_SERVICE_LIST_METHOD,
         );
-        return $req->data['results'];
+        return $req->data['results'] ?? [];
     }
 
 }
